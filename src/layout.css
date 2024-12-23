@@ -1,0 +1,67 @@
+/* The styling for the parent page element */
+
+.HolyGrail {
+    margin: 0;              /* Remove the margin to eliminate scroll bars */
+    height: 100vh;
+
+    display: grid;          /* Grid allows for setting the template for the page */
+    grid-template-columns: minmax(12em, 25em) auto; /* Grid columns: the left column should never
+                                         be smaller than 12em
+                                         The rest can grow as large as
+                                         it needs to be */
+    grid-template-rows: auto 1fr auto; /* Grid rows: the top and bottom should grow
+                                         or shrink but be auto sized to only be
+                                         as tall as needed.  The middle row should
+                                         be set to the rest of the available space */
+    grid-gap: 0;            /* No gap between items */
+
+    /* Grid template areas define the row and column span for items */
+    grid-template-areas:
+        "header header"
+        "nav content"
+        "footer footer";
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #c7d1bf;
+}
+
+.HolyGrail-header {
+    grid-area: header;  /* Header item */
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.HolyGrail-footer {
+    grid-area: footer;  /* Footer item */
+    margin: 10px;
+    text-align: center;
+}
+
+.HolyGrail-content {
+    grid-area: content; /* Main content item */
+    width: 950px;
+    margin-right: 15px;
+}
+
+.HolyGrail-nav {
+    grid-area: nav;     /* Navigation item */
+    width: 250px;
+    background-color: #689a68;
+}
+
+.form-check{
+    margin: 10px;
+}
+
+.card-body{
+    border: solid black;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 2px;
+    width: 300px;
+    padding: 5px;
+    background-color: #689a68;
+}
